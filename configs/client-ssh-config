@@ -1,0 +1,15 @@
+# Bastion Server
+Host bastion
+    HostName 192.168.56.10
+    User adminlab
+    IdentityFile ~/.ssh/id_ed25519_lab
+    IdentitiesOnly yes
+
+# Internal Server
+Host interne
+    HostName 10.0.0.20
+    User adminlab
+    IdentityFile ~/.ssh/id_ed25519_lab
+    IdentitiesOnly yes
+    ProxyJump bastion
+
